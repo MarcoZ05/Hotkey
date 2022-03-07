@@ -1,4 +1,4 @@
-const slotsHtml = [];
+  const slotsHtml = [];
 // html elements
 let slotNum = [];
 // selcted slot number
@@ -19,7 +19,7 @@ for (let i = 0; i <= slotRows; i++) {
   }
 }
 
-for (let i = 1; i < slotCols; i++) {
+for (let i = 1; i <= slotCols; i++) {
   slotKey[i] = i;
 }
 
@@ -43,7 +43,7 @@ function newSelected() {
 
 function resetStyle() {
   for (let i = 1; i <= slotRows; i++) {
-    for (let j = 1; j < slotCols; j++) {
+    for (let j = 1; j <= slotCols; j++) {
       slotsHtml[i + "-" + j].removeAttribute("class");
     }
   }
@@ -77,8 +77,8 @@ function updateStyle() {
 }
 
 function checkSlotKey(key) {
-  console.log();
   if (key == slotKey[slotNum[1]]) {
+    console.log("www");
     newSelected();
   }
 }

@@ -9,8 +9,12 @@ table {
 
 td {
   border: black 1px solid;
-  height: 22.5%;
+  height: 20%;
   text-align: center;
+}
+
+.dashbord td{
+  height: 10%;
 }
 
 .slot0 td {
