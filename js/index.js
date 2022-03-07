@@ -1,4 +1,6 @@
-  const slotsHtml = [];
+const slotsHtml = [];
+const pointSpan = document.getElementById("point");
+const mistakeSpan = document.getElementById("mistake");
 // html elements
 let slotNum = [];
 // selcted slot number
@@ -7,6 +9,9 @@ let slotKey = [];
 let settingMode = false;
 let slotRows = 4;
 let slotCols = 9;
+
+let points = 0;
+let mistakes = 0;
 
 for (let i = 0; i <= slotRows; i++) {
   for (let j = 1; j <= slotCols; j++) {
@@ -77,10 +82,30 @@ function updateStyle() {
 }
 
 function checkSlotKey(key) {
+  let elem = slotsHtml["0-" + slotNum[1]];
   if (key == slotKey[slotNum[1]]) {
-    console.log("www");
+    console.log(elem);
+
+    elem.classList.add("clicked");
+    setTimeout(() => {
+      elem.classList.remove("clicked");
+    }, 250);
+
     newSelected();
+    addPoint();
+  } else {
+    addMistake();
   }
+}
+
+function addPoint() {
+  points++;
+  pointSpan.innerHTML = points;
+}
+
+function addMistake() {
+  mistakes++;
+  mistakeSpan.innerHTML = mistakes;
 }
 
 function rand(min, max) {
